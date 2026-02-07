@@ -1,19 +1,14 @@
 [build-system]
-requires = [
-    "setuptools>=64",
-    "wheel",
-]
+requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "isagellm-control-plane-benchmark"
-version = "0.2.0.0"
+version = "0.2.0.1"
 description = "Control Plane scheduling benchmark for sageLLM (formerly isage-control-plane-benchmark)"
 readme = "README.md"
 requires-python = ">=3.11"
-authors = [
-    { name = "IntelliStream Team", email = "shuhao_zhang@hust.edu.cn" },
-]
+authors = [{ name = "IntelliStream Team", email = "shuhao_zhang@hust.edu.cn" }]
 keywords = [
     "sage",
     "benchmark",
@@ -74,7 +69,7 @@ Issues = "https://github.com/intellistream/sagellm-control-plane-benchmark/issue
 sage-cp-bench = "sage.benchmark_control_plane.cli:main"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -82,12 +77,10 @@ include = ["sage*"]
 namespaces = true
 
 [tool.setuptools.dynamic]
-version = {attr = "sage.benchmark_control_plane._version.__version__"}
+version = { attr = "sage.benchmark_control_plane._version.__version__" }
 
 [tool.setuptools.package-data]
-"sage.benchmark_control_plane" = [
-    "visualization/templates/**/*",
-]
+"sage.benchmark_control_plane" = ["visualization/templates/**/*"]
 
 [tool.ruff]
 line-length = 100
@@ -112,15 +105,6 @@ ignore = [
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
-testpaths = [
-    "tests",
-    "src",
-]
-python_files = [
-    "test_*.py",
-    "*_test.py",
-]
-addopts = [
-    "-ra",
-    "--verbose",
-]
+testpaths = ["tests", "src"]
+python_files = ["test_*.py", "*_test.py"]
+addopts = ["-ra", "--verbose"]
